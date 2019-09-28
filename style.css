@@ -1,0 +1,29 @@
+html, body {
+    font-family: 'Vibes', cursive;
+    text-align: center;
+    
+}
+
+h1 {
+    color: rebeccapurple;
+    font-size: 55px;
+    text-transform: uppercase;
+    text-decoration: navajowhite;
+}
+
+h2 {
+    color: rebeccapurple;
+    display: inline-block;
+    font-size: 40px;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    border-bottom: 3px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-left: 20px;
+}
+
+
+
+
