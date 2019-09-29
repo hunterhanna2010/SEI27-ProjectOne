@@ -35,3 +35,10 @@ consonantButton.addEventListener('click', function(e) {
         console.log(`the consonants button no longer works`)
     }
 })
+
+var hintButton = document.getElementById('hint')
+hintButton.addEventListener('click', function(e) {
+    console.log(`hint has been clicked`)
+    var hintField = document.getElementById('hint-field')
+    hintField.style.visibility = 'visible';
+})

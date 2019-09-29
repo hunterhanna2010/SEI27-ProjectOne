@@ -1,14 +1,20 @@
-html, body {
+body {
     font-family: 'Vibes', cursive;
     text-align: center;
-    
+    display: grid;
+    margin: auto;
+    grid-template-rows: 400px 200px 1fr 1fr;
+    grid-template-columns: 400px 1fr;
+    grid-template-areas:"header header"
+                        "invalid-words player-input"
+                        "invalid-words word-bank"
+                        "hint hint"
 }
 
 h1 {
     color: rebeccapurple;
     font-size: 55px;
     text-transform: uppercase;
-    text-decoration: navajowhite;
 }
 
 h2 {
@@ -23,6 +29,72 @@ h2 {
     border-right: 0px;
     padding-left: 20px;
 }
+
+button {
+    font-family: 'Vibes', cursive;
+    font-size: 2em;
+    text-transform: uppercase;
+    background: rebeccapurple;
+    color: navajowhite;
+    height: 50px;
+    width: 400px;
+    border-radius: 10px 100px / 120px;
+}
+
+input {
+    font-family: 'Vibes', cursive;
+    text-align: center;
+    height: 100px;
+    width: 700px;
+    color: rebeccapurple;
+    font-size: 40px;
+    text-transform: uppercase;
+    border-bottom: 3px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style: none;
+}
+
+p {
+    font-size: 2em;
+}
+
+header {
+    grid-area: header;
+    border: 10px solid silver;
+}
+
+section {
+    grid-area: player-input;
+    border: 10px solid silver;
+}
+
+aside {
+    grid-area: invalid-words;
+    border: 10px solid silver;
+}
+
+main {
+    grid-area: word-bank;
+    border: 10px solid silver;
+}
+
+footer {
+    visibility: hidden;
+    grid-area: hint;
+    border: 10px solid silver;
+}
+
 
 
 
