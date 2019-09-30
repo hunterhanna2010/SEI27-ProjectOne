@@ -2,8 +2,13 @@ console.log('This is project One');
 
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 const consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z'];
-var vowelClicks = 0; //limit to 3
-var consonantClicks = 0; //limit to 2
+var vowelClicks = 0; //limit to 2
+var consonantClicks = 0; //limit to 3
+var ulElement = ''
+
+
+
+
 var vowelButton = document.getElementById('vowels');
 vowelButton.addEventListener('click', function(e) {
     console.log('vowels has been clicked')
@@ -41,4 +46,26 @@ hintButton.addEventListener('click', function(e) {
     console.log(`hint has been clicked`)
     var hintField = document.getElementById('hint-field')
     hintField.style.visibility = 'visible';
+})
+
+var submitButton = document.getElementById('submit-word')
+submitButton.addEventListener('click', function(e) {
+    var playerInputValue = document.getElementById('player-input').value;
+    var invalidWord = playerInputValue.length;
+    console.log(`this is a word has been clicked`)
+    console.log(playerInputValue)
+    console.log(invalidWord)
+    if (invalidWord < 2) {
+        var invalidWordList = document.getElementById('invalid-word-list')
+        invalidWordList.textContent += ` ${playerInputValue},`;
+        console.log(invalidWordList)
+    } else {
+        var validWordList = document.getElementById('valid-word-list')
+        validWordList.textContent += playerInputValue;
+        console.log(validWordList)
+        
+    
+
+    }
+    
 })
