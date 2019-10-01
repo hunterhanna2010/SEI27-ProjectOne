@@ -5,7 +5,7 @@ body {
     text-align: center;
     display: grid;
     margin: auto;
-    grid-template-rows: 400px 200px 1fr 400px;
+    grid-template-rows: 675px 200px 1fr 400px;
     grid-template-columns: 400px 1fr;
     grid-template-areas:"header header"
                         "invalid-words player-input"
@@ -17,6 +17,7 @@ h1 {
     color: rebeccapurple;
     font-size: 55px;
     text-transform: uppercase;
+    margin-bottom: 0px;
 }
 
 h2 {
@@ -30,6 +31,7 @@ h2 {
     border-left: 0px;
     border-right: 0px;
     padding-left: 20px;
+    margin-bottom: 0px;
 }
 
 button {
@@ -39,7 +41,7 @@ button {
     background: rebeccapurple;
     color: navajowhite;
     height: 50px;
-    width: 400px;
+    width: 300px;
     border-radius: 10px 100px / 120px;
 }
 
@@ -60,23 +62,62 @@ input {
 }
 
 ul {
-    color: rebeccapurple;
+    color: navajowhite;
+    background: black;
     list-style: none;
-    font-size: 4em;
+    font-size: 2.5em;
     text-decoration: line-through;
     text-transform: uppercase;
+    text-align: center;
+    
 }
 
 ol {
     color: rebeccapurple;
     list-style: none;
-    font-size: 2em;
-    text-transform: uppercase
+    font-size: 2.5em;
+    text-transform: uppercase;
 }
 
-p {
+.para-element {
+    color: navajowhite;
+    background: black;
     font-size: 2em;
+    text-transform: uppercase;
+    display: block;
 }
+
+#game-rules {
+    background: rebeccapurple;
+    color: navajowhite;
+    font-size: 2em;
+    text-transform: uppercase;
+    width: 900px;
+    margin: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 5px solid silver;
+    border-radius: 10px 100px / 120px;
+}
+
+#current-score {
+    font-family: 'Vibes', cursive;
+    font-size: 2em;
+    text-transform: uppercase;
+    background: rebeccapurple;
+    color: navajowhite;
+    height: 50px;
+    width: 300px;
+    border-radius: 10px 100px / 120px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* li {
+    list-style: none;
+    background: black;
+    color: navajowhite;
+} */
 
 header {
     grid-area: header;
