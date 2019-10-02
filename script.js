@@ -50,7 +50,7 @@ vowelButton.addEventListener('click', function(e) {
         randomLettersArray.push(h2VowelElement.textContent);
         // lettersArray.splice(0, 1, lettersArray);
         // lettersArray.flat(2);
-        console.log(lettersArray);
+        console.log(randomLettersArray);
         //lettersArray.map(letter => lettersArray[i]);
         //console.log(letter);
         } else {
@@ -72,7 +72,7 @@ consonantButton.addEventListener('click', function(e) {
         h2ConsonantElement.textContent = randomConsonant;
         randomLettersArray.push(h2ConsonantElement.textContent);
         //lettersArray.map(letter);
-        console.log(lettersArray)
+        console.log(randomLettersArray)
         //letter.textContent += randomConsonant;
         console.log(h2ConsonantElement.textContent);
         } else {
@@ -161,29 +161,29 @@ submitButton.addEventListener('click', function(e) {
 //if true, it is valid to the randomLettersArray and can go in the correct area
 //else, it is invalid and needs to go to the invalid list because the inputArray did not match the randomLettersArray
 function compareArrays() {
-    for(let l = 0; l < lettersArray.length; l++) {
-        for (let i = 0; i < inputArray.length; i++) {
-            if (lettersArray[l] != inputArray[i]) {
-                console.log('that input is not in the array')
-                var notInTheArray = document.getElementById('invalids')
-                notInTheArray.textContent += playerInputValue;
-            } else {
-                console.log('your input was in the array')
-                var inTheArray = document.getElementById('valid-word-list')
-                inTheArray.textContent += playerInputValue;
-            }
+    for (let l = 0; l < randomLettersArray.length; l++) {
+    var match = inputArray.includes(randomLettersArray[l]);
+    console.log(match)
+        if (!match) {
+        console.log('your input was NOT in the array')
+        var notInTheArray = document.getElementById('invalids')
+        notInTheArray.textContent += playerInputValue;
+        } else {
+        console.log('your input was in the array')
         }
     }
 }
 
 //this is the third element to check. This file tests whether the input is a valid word
 //if it is true, it is a word in the dictionary, so put it in the right area
-//else, it is not in the dictionary, and is false.
-
+//else, it is not in the dictionary, and is false, therefore invalid.
 function checkDictionary() {
 
 }
-
+//this is the fourth element to check. the hint area is hidden until the player clicks
+//at that point, programatically, I want to check which dictionary word is the longest left over
+//then randomize which letter to give
+//append that letter to the DOM with the other characters hidden by password bulletpoints
 function hintZone() {
 
 }
