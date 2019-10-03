@@ -189,6 +189,7 @@ var dictionary = [
 'left',
 'let',
 'less',
+'lid',
 'life',
 'light',
 'like',
@@ -252,6 +253,7 @@ var dictionary = [
 'own',
 'ox',
 'oz',
+'pan',
 'page',
 'paper',
 'part',
@@ -294,7 +296,9 @@ var dictionary = [
 'rule',
 'rum',
 'run',
+'sail',
 'sad',
+'salad',
 'same',
 'saw',
 'say',
@@ -363,6 +367,7 @@ var dictionary = [
 'this',
 'those',
 'three',
+'tie',
 'time',
 'tip',
 'to',
@@ -426,7 +431,7 @@ var dictionary = [
 ];
 
 
-
+//const API
 
 // function getWord(isAWord) {
 //     return isAWord

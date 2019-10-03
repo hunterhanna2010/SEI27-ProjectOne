@@ -86,6 +86,8 @@ resetButton.addEventListener('click', function(e) {
     var clearParaElementFour = document.getElementById('p-four').textContent = '';
     var clearParaElementFive = document.getElementById('p-five').textContent = '';
     var clearPlayerInput = document.getElementById('player-input').textContent = '';
+    var clearHintField = document.getElementById('hint-field').textContent = '';
+    var clearHintStyle = document.getElementById('hint-field').style.visibility = 'hidden';
     var enableVowels = document.getElementById('vowels').disabled = false;
     console.log(enableVowels)
     var enableConsonants = document.getElementById('consonants').disabled = false;
@@ -97,13 +99,17 @@ resetButton.addEventListener('click', function(e) {
 })
 
 //when the hint button is clicked, the hidden text field will be visible
-//THIS IS A STRETCH GOAL. I have prioritized adding a reset button and clearing the active fields
+//I have prioritized adding a reset button and clearing the active fields
 hintButton.addEventListener('click', function(e) {
     console.log(`hint has been clicked`);
     playerScore = playerScore - 10;
     currentScore.textContent = `Current Score: ${playerScore}`;
     var hintField = document.getElementById('hint-field');
     hintField.style.visibility = 'visible';
+    var hintParagraph = document.getElementById('hint-field')
+    var hintParaText = document.createElement('p');
+    hintParaText.textContent = 'What? You need help on a five letter word?!'
+    hintParagraph.appendChild(hintParaText);
 })
 
 //the submit button click
@@ -113,7 +119,9 @@ submitButton.addEventListener('click', function(e) {
     console.log(`this is a word button has been clicked`);
     playerInputValue = document.getElementById('player-input').value;
     console.log(playerInputValue)
-    checkMatch(playerInputValue)
+    if (checkMatch(playerInputValue)) {
+        console.log('We have a winning word')
+    }
 })
 
 //There are two main elements to check. 
@@ -197,10 +205,7 @@ function checkMatch(playerInputValue) {
 
 
     
-
-//this fourth element is to iterate over the randomLettersArray and see how many word combinations are present
-//leftOver words must be english words defined in the word-dictionary file, exclude one letter words and the articles 'a', 'an', and 'the'
-//player cannot finish currentGame until all words are solved.
+//THIS IS A STRETCH GOAL.
 //display winning message if all words are solved
 //also, display message if no words can be found at all, therefore, direct player to reset page
 function checkWordsLeft() {

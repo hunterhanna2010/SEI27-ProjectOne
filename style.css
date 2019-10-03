@@ -130,12 +130,12 @@ ol {
     margin-top: 10px;
 }
 
-/* li {
-    list-style: none;
+.hint-text {
+    color: rebeccapurple;
     background: black;
-    color: navajowhite;
-    text-decoration: line-through;
-} */
+    font-size: 2em;
+    letter-spacing: .03em;
+}
 
 header {
     grid-area: header;
