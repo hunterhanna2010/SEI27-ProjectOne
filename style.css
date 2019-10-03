@@ -5,7 +5,7 @@ body {
     text-align: center;
     display: grid;
     margin: auto;
-    grid-template-rows: 675px 200px 1fr 400px;
+    grid-template-rows: 700px 200px 1fr 400px;
     grid-template-columns: 400px 1fr;
     grid-template-areas:"header header"
                         "invalid-words player-input"
@@ -20,13 +20,13 @@ h1 {
     margin-bottom: 0px;
 }
 
+
 h2 {
     color: rebeccapurple;
     display: inline-block;
     font-size: 40px;
     letter-spacing: 1em;
     text-transform: uppercase;
-    border-bottom: 3px solid black;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
@@ -34,6 +34,24 @@ h2 {
     margin-bottom: 0px;
 }
 
+
+#random-vowel-area {
+    color: rebeccapurple;
+    display: inline-block;
+    font-size: 40px;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    
+}
+
+#random-consonant-area {
+    color: rebeccapurple;
+    display: inline-block;
+    font-size: 40px;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    
+}
 button {
     font-family: 'Vibes', cursive;
     font-size: 2em;
@@ -61,7 +79,7 @@ input {
     margin-top: 20px;
 }
 
-ul {
+#invalid-word-list {
     color: navajowhite;
     background: black;
     list-style: none;
@@ -104,7 +122,7 @@ ol {
     font-family: 'Vibes', cursive;
     font-size: 2em;
     text-transform: uppercase;
-    background: rebeccapurple;
+    background: black;
     color: navajowhite;
     height: 50px;
     width: 300px;
@@ -117,32 +135,33 @@ ol {
     list-style: none;
     background: black;
     color: navajowhite;
+    text-decoration: line-through;
 } */
 
 header {
     grid-area: header;
-    border: 10px solid silver;
+    border: 5px solid silver;
 }
 
 section {
     grid-area: player-input;
-    border: 10px solid silver;
+    border: 5px solid silver;
 }
 
 aside {
     grid-area: invalid-words;
-    border: 10px solid silver;
+    border: 5px solid silver;
 }
 
 main {
     grid-area: word-bank;
-    border: 10px solid silver;
+    border: 5px solid silver;
 }
 
 footer {
     visibility: hidden;
     grid-area: hint;
-    border: 10px solid silver;
+    border: 5px solid silver;
 }
 
 
