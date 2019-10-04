@@ -19,9 +19,6 @@ var currentScore = document.getElementById('current-score');
 var resetButton = document.getElementById('reset');
 
 //EVENT LISTENERS
-
-
-
 //when the vowel button is clicked, the vowelsArray is randomized and placed in the h2-field for the player to begin
 //after two clicks, the vowel button is disabled and the vowels cannot be added to the randomLettersArray.
 vowelButton.addEventListener('click', function(e) {
@@ -117,7 +114,6 @@ function checkWin() {
     } else if (playerScore >= 10) {
     console.log('WE HAVE A winner')
     document.getElementById('message').textContent = 'You Win';
-    // // }
     }
 }
 
@@ -127,23 +123,22 @@ function checkWin() {
 //2) how long is it?
 
 //1) if there is no match in the dictionary file, it is invalid.
-//this takes care of any edge cases where someone inputs a period or a comma
-//or uses a contraction apostrophe.
+//this takes care of any edge cases where someone inputs a period or a comma, numbers, characters that do not belong,
+//or uses a contraction.
 
-//2) the length of the player input value controls where to put the word
-//in descending order.
+//2) the length of the player input value controls where to put the word in descending order.
 
 
 //this is the first element to check. And this is the bulk of the game logic. This one function negates the need for three separate 
 //verifications. Now, I don't need to see if the individual characters match, because I am seeing if the word is in the file at any point.
-//This is the priority for my dictionary file as is, as well as any future implementations.
+//This is the priority for finding a match to the my dictionary file, as well as any future implementations for this project.
 //when I convert to a dictionary API, I won't need to revise my entire checkMatch function. 
 function checkMatch(playerInputValue) {
     var listItem = document.createElement('li');
     //array.includes returns true or false. If the playerInputValue string includes the dictionary word == That is true and is a match.
     var match = dictionary.includes(playerInputValue);
         console.log(match)
-        //if NOT a match with word-dictionary, then reject it as invalid. Deduct two points.
+        //if NOT a match with word-dictionary, then reject it as invalid. Deduct two points. 
         if (!match) {
             console.log('your input was NOT in the array')
             console.log(playerInputValue)
@@ -164,8 +159,6 @@ function checkMatch(playerInputValue) {
                     five.textContent = playerInputValue;
                     playerScore = playerScore + 5;
                     currentScore.textContent = `Current Score: ${playerScore}`;
-                    console.log(paraElementFive)
-                    console.log(five)
                     checkWin();
                     break;
                 case 4:
@@ -174,7 +167,6 @@ function checkMatch(playerInputValue) {
                     four.textContent = playerInputValue;
                     playerScore = playerScore + 4;
                     currentScore.textContent = `Current Score: ${playerScore}`
-                    console.log(four)
                     checkWin();
                     break;
                 case 3:
@@ -183,7 +175,6 @@ function checkMatch(playerInputValue) {
                     three.textContent = playerInputValue;
                     playerScore = playerScore + 3;
                     currentScore.textContent = `Current Score: ${playerScore}`
-                    console.log(three)
                     checkWin();
                     break;
                 case 2:
@@ -192,7 +183,6 @@ function checkMatch(playerInputValue) {
                     two.textContent = playerInputValue;
                     playerScore = playerScore + 2
                     currentScore.textContent = `Current Score: ${playerScore}`
-                    console.log(two)
                     checkWin();
                     break;
                 default:
@@ -201,7 +191,6 @@ function checkMatch(playerInputValue) {
                     one.textContent += playerInputValue;
                     playerScore = playerScore - 2;
                     currentScore.textContent = `Current Score: ${playerScore}`
-                    console.log(one)
                     checkWin();
             }   
             
@@ -212,33 +201,10 @@ function checkMatch(playerInputValue) {
 //at that point, programatically, I want to check which dictionary word is the longest left over
 //then randomize which letter to hint
 //append that letter to the DOM with the other characters hidden by password bulletpoints
+//THIS IS A TO DO
 
 
 
-// function checkForHint() {
-//     dictionary.filter(word => {
-//         randomLettersArray.map()
-//     }
-// //          return true; 
-// // //     })
-// // // }
-// // console.log(checkForHint(dictionary, randomLettersArray));
-    
-// //     let request = new Request( {
-// //         method: 'GET'
-// //     });
-// //     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${playerInputValue}?key=492df6b1-c190-4506-97f9-9fd3a76d3eea`)
-// //     .then((response) => response.json())
-// //     .then((data) => {
-// //         const children = data[0].meta.id[0];
-// //         console.log(children)
-// //     })
-    
-// //     .catch (function(err) {
-// //         console.log('err')
-// //     })
-
-// // }
 
 
         
