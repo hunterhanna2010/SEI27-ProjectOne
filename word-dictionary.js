@@ -8,13 +8,14 @@ var dictionary = [
 'again',
 'age',
 'ago',
+'aim',
+'air',
+'all',
+'also',
 'among',
 'any',
 'ape',
 'ate',
-'air',
-'all',
-'also',
 'am',
 'and',
 'area',
@@ -23,10 +24,12 @@ var dictionary = [
 'at',
 'back',
 'ball',
+'bar',
 'base',
 'bat',
 'be',
 'bed',
+'bee',
 'began',
 'begin',
 'best',
@@ -54,6 +57,7 @@ var dictionary = [
 'cause',
 'check',
 'city',
+'civil',
 'class',
 'clear',
 'close',
@@ -67,16 +71,20 @@ var dictionary = [
 'cut',
 'dark',
 'day',
+'deal',
+'dean',
 'deep',
 'die',
 'do',
 'does',
 'dog',
+'don',
 'done',
 'door',
 'draw',
 'drive',
 'dry',
+'due',
 'duty',
 'early',
 'earth',
@@ -92,6 +100,7 @@ var dictionary = [
 'face',
 'fact',
 'fall',
+'fan',
 'far',
 'farm',
 'fast',
@@ -121,6 +130,7 @@ var dictionary = [
 'full',
 'game',
 'gave',
+'gel',
 'get',
 'girl',
 'give',
@@ -132,6 +142,7 @@ var dictionary = [
 'green',
 'group',
 'grow',
+'gum',
 'gut',
 'half',
 'hand',
@@ -152,6 +163,7 @@ var dictionary = [
 'him',
 'hip',
 'his',
+'hoe',
 'hold',
 'home',
 'horse',
@@ -190,6 +202,7 @@ var dictionary = [
 'let',
 'less',
 'lid',
+'lie',
 'life',
 'light',
 'like',
@@ -200,6 +213,8 @@ var dictionary = [
 'lot',
 'love',
 'low',
+'lug',
+'mad',
 'made',
 'main',
 'make',
@@ -219,6 +234,7 @@ var dictionary = [
 'more',
 'move',
 'much',
+'mug',
 'music',
 'must',
 'my',
@@ -273,6 +289,7 @@ var dictionary = [
 'pose',
 'pot',
 'pound',
+'pour',
 'power',
 'press',
 'pull',
@@ -300,6 +317,7 @@ var dictionary = [
 'sad',
 'salad',
 'same',
+'sand',
 'saw',
 'say',
 'sea',
@@ -311,6 +329,7 @@ var dictionary = [
 'shape',
 'she',
 'ship',
+'shoe',
 'short',
 'show',
 'since',
@@ -327,6 +346,7 @@ var dictionary = [
 'song',
 'soon',
 'south',
+'sox',
 'spell',
 'stand',
 'star',
@@ -350,6 +370,7 @@ var dictionary = [
 'talk',
 'tea',
 'teach',
+'tee',
 'tell',
 'ten',
 'test',
@@ -389,8 +410,10 @@ var dictionary = [
 'us',
 'use',
 'usual',
+'van',
 'vat',
 'very',
+'vex',
 'voice',
 'vowel',
 'wait',
@@ -429,43 +452,4 @@ var dictionary = [
 'your',
 'zoo',
 ];
-
-
-//const API
-
-// function getWord(isAWord) {
-//     return isAWord
-// }
-
-// var playerGuess = document.getElementsByClassName('player-guess');
-// playerGuess.value;
-// if (playerGuess) {
-    
-//     console.log(`this is not a word`)
-//     //playerGuessValue.textContent += playerGuess;
-//     console.log(playerGuess)
-//     // var invalidWord = document.getElementsByClassName('player-guess').value;
-//     // invalidWord.textContent += playerGuess;
-//     // console.log(invalidWord);
-    
-// } else {
-//     console.log(`this is a word`)
-// }
-
-
-
-// for (var property1 in playerGuess) {
-//   string1 += object1[property1];
-// }
-
-//console.log(string1);
-// expected output: "123"
-
-
-// dictionary.keys(dictionary).forEach(key => {
-//     let value = dictionary(key)
-//     console.log(value);
-// });
-
-
 

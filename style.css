@@ -5,7 +5,7 @@ body {
     text-align: center;
     display: grid;
     margin: auto;
-    grid-template-rows: 700px 200px 1fr 400px;
+    grid-template-rows: 750px 200px 1fr 400px;
     grid-template-columns: 400px 1fr;
     grid-template-areas:"header header"
                         "invalid-words player-input"
@@ -34,24 +34,6 @@ h2 {
     margin-bottom: 0px;
 }
 
-
-#random-vowel-area {
-    color: rebeccapurple;
-    display: inline-block;
-    font-size: 40px;
-    letter-spacing: 1em;
-    text-transform: uppercase;
-    
-}
-
-#random-consonant-area {
-    color: rebeccapurple;
-    display: inline-block;
-    font-size: 40px;
-    letter-spacing: 1em;
-    text-transform: uppercase;
-    
-}
 button {
     font-family: 'Vibes', cursive;
     font-size: 2em;
@@ -79,6 +61,80 @@ input {
     margin-top: 20px;
 }
 
+ol {
+    color: rebeccapurple;
+    list-style: none;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+header {
+    grid-area: header;
+    border: 5px solid silver;
+}
+
+section {
+    grid-area: player-input;
+    border: 5px solid silver;
+}
+
+aside {
+    grid-area: invalid-words;
+    border: 5px solid silver;
+}
+
+main {
+    grid-area: word-bank;
+    border: 5px solid silver;
+}
+
+footer {
+    visibility: hidden;
+    grid-area: hint;
+    border: 5px solid silver;
+}
+
+.para-element {
+    color: rebeccapurple;
+    font-size: 2em;
+    text-transform: uppercase;
+    display: block;
+}
+
+.hint-text {
+    color: rebeccapurple;
+    background: black;
+    font-size: 2em;
+    letter-spacing: .03em;
+}
+
+#message {
+    color: rebeccapurple;
+    background: silver;
+    font-size: 55px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+
+#random-vowel-area {
+    color: rebeccapurple;
+    display: inline-block;
+    font-size: 40px;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    
+}
+
+#random-consonant-area {
+    color: rebeccapurple;
+    display: inline-block;
+    font-size: 40px;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    
+}
+
 #invalid-word-list {
     color: navajowhite;
     background: black;
@@ -88,20 +144,6 @@ input {
     text-transform: uppercase;
     text-align: center;
     
-}
-
-ol {
-    color: rebeccapurple;
-    list-style: none;
-    font-size: 2.5em;
-    text-transform: uppercase;
-}
-
-.para-element {
-    color: rebeccapurple;
-    font-size: 2em;
-    text-transform: uppercase;
-    display: block;
 }
 
 #game-rules {
@@ -130,38 +172,10 @@ ol {
     margin-top: 10px;
 }
 
-.hint-text {
-    color: rebeccapurple;
-    background: black;
-    font-size: 2em;
-    letter-spacing: .03em;
-}
 
-header {
-    grid-area: header;
-    border: 5px solid silver;
-}
 
-section {
-    grid-area: player-input;
-    border: 5px solid silver;
-}
 
-aside {
-    grid-area: invalid-words;
-    border: 5px solid silver;
-}
 
-main {
-    grid-area: word-bank;
-    border: 5px solid silver;
-}
-
-footer {
-    visibility: hidden;
-    grid-area: hint;
-    border: 5px solid silver;
-}
 
 
 

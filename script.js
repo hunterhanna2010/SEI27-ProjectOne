@@ -1,13 +1,9 @@
-//randomize which character to give to player when they click hint. 
-//I want to start with longest word left to correctly guess.
-//game settings: initialize game, start game, play game, win game, lose game, restart game
 //winner message/loser message
 
 //GLOBAL VARIABLES
 const vowelsArray = ['a', 'e', 'i', 'o', 'u'];
 const consonantsArray = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z'];
 var randomLettersArray = []; //limit to 5. this is the total letters from the vowelsArray and the consonantsArray
-//var inputArray = []; //we compare inputArray with the randomLettersArray to check if the input matches at any point and in any order.
 var vowelClicks = 0; //limit to 2
 var consonantClicks = 0; //limit to 3
 var playerScore = 0; //score system updates by player inputs
@@ -21,7 +17,6 @@ var hintButton = document.getElementById('hint');
 var submitButton = document.getElementById('submit-word');
 var currentScore = document.getElementById('current-score');
 var resetButton = document.getElementById('reset');
-
 
 //EVENT LISTENERS
 
@@ -41,16 +36,9 @@ vowelButton.addEventListener('click', function(e) {
         h2Element.textContent = randomVowel;
         h2VowelElement.appendChild(h2Element)
         randomLettersArray.push(randomVowel);
-        //randomLettersArray.split(h2VowelElement.textContent)
         console.log(randomLettersArray)
-        // lettersArray.splice(0, 1, lettersArray);
-        // lettersArray.flat(2);
-        //lettersArray.map(letter => lettersArray[i]);
-        //console.log(letter);
         } else {
             var disableVowels = document.getElementById('vowels').disabled = true;
-            
-            //randomLettersArray.pop()
             console.log(`the vowels button no longer works`);
         }
 });
@@ -69,7 +57,6 @@ consonantButton.addEventListener('click', function(e) {
         h2ConsonantElement.appendChild(h2Element)
         randomLettersArray.push(randomConsonant);
         console.log(randomLettersArray)
-        //console.log(h2ConsonantElement.textContent);
         } else {
         var disableConsonants = document.getElementById('consonants').disabled = true;
         console.log(`the consonants button no longer works`);
@@ -88,10 +75,6 @@ resetButton.addEventListener('click', function(e) {
     var clearPlayerInput = document.getElementById('player-input').textContent = '';
     var clearHintField = document.getElementById('hint-field').textContent = '';
     var clearHintStyle = document.getElementById('hint-field').style.visibility = 'hidden';
-    var enableVowels = document.getElementById('vowels').disabled = false;
-    console.log(enableVowels)
-    var enableConsonants = document.getElementById('consonants').disabled = false;
-    console.log(enableConsonants)
     playerScore = 0;
     currentScore.textContent = `Current Score: ${playerScore}`
     vowelClicks = 0;
@@ -108,21 +91,34 @@ hintButton.addEventListener('click', function(e) {
     hintField.style.visibility = 'visible';
     var hintParagraph = document.getElementById('hint-field')
     var hintParaText = document.createElement('p');
-    hintParaText.textContent = 'What? You need help on a five letter word?!'
+    hintParaText.textContent = 'What? You need help on a five letter word?'
     hintParagraph.appendChild(hintParaText);
 })
 
 //the submit button click
 //This block collects the inputvalue (.value)
-//and runs checkDictionary function
+//and runs checkMatch function
 submitButton.addEventListener('click', function(e) {
     console.log(`this is a word button has been clicked`);
     playerInputValue = document.getElementById('player-input').value;
+    //checkForHint();
     console.log(playerInputValue)
     if (checkMatch(playerInputValue)) {
         console.log('We have a winning word')
     }
 })
+
+function checkWin() {
+    if (playerScore < 0) {
+    console.log(`WE LOSE`)
+    document.getElementById('message').textContent = 'You lost'
+    } else if (playerScore >= 5) {
+    console.log('WE HAVE A winner')
+    document.getElementById('message').textContent = 'You Win';
+    // // }
+    }
+}
+
 
 //There are two main elements to check. 
 //1) does it match as a word in the dictionary?
@@ -133,14 +129,16 @@ submitButton.addEventListener('click', function(e) {
 //or uses a contraction apostrophe.
 
 //2) the length of the player input value controls where to put the word
-//in descending order 5 - 2-letter words.
+//in descending order.
 
 
 //this is the first element to check. And this is the bulk of the game logic. This one function negates the need for three separate 
 //verifications. Now, I don't need to see if the individual characters match, because I am seeing if the word is in the file at any point.
-//This is the priority for my dictionary file as is, as well as any future implementations. 
+//This is the priority for my dictionary file as is, as well as any future implementations.
+//when I convert to a dictionary API, I won't need to revise my entire checkMatch function. 
 function checkMatch(playerInputValue) {
     var listItem = document.createElement('li');
+    //array.includes returns true or false. If the playerInputValue string includes the dictionary word == That is true and is a match.
     var match = dictionary.includes(playerInputValue);
         console.log(match)
         //if NOT a match with word-dictionary, then reject it as invalid. Deduct two points.
@@ -153,6 +151,7 @@ function checkMatch(playerInputValue) {
             console.log(notInTheArray)
             playerScore = playerScore - 2;
             currentScore.textContent = `Current Score: ${playerScore}`
+            checkWin();
         } else {
             //It IS a match, therefore now valid and sent to the correct div container based on the value.length
             console.log('your input was in the array')
@@ -165,6 +164,7 @@ function checkMatch(playerInputValue) {
                     currentScore.textContent = `Current Score: ${playerScore}`;
                     console.log(paraElementFive)
                     console.log(five)
+                    checkWin();
                     break;
                 case 4:
                     console.log(`this is number 4`)
@@ -173,6 +173,7 @@ function checkMatch(playerInputValue) {
                     playerScore = playerScore + 4;
                     currentScore.textContent = `Current Score: ${playerScore}`
                     console.log(four)
+                    checkWin();
                     break;
                 case 3:
                     console.log(`this is number 3`)
@@ -181,6 +182,7 @@ function checkMatch(playerInputValue) {
                     playerScore = playerScore + 3;
                     currentScore.textContent = `Current Score: ${playerScore}`
                     console.log(three)
+                    checkWin();
                     break;
                 case 2:
                     console.log(`this is number 2`)
@@ -189,6 +191,7 @@ function checkMatch(playerInputValue) {
                     playerScore = playerScore + 2
                     currentScore.textContent = `Current Score: ${playerScore}`
                     console.log(two)
+                    checkWin();
                     break;
                 default:
                     console.log(`that is a letter not a word`)
@@ -197,39 +200,53 @@ function checkMatch(playerInputValue) {
                     playerScore = playerScore - 2;
                     currentScore.textContent = `Current Score: ${playerScore}`
                     console.log(one)
+                    checkWin();
             }   
             
     }
 }
 
-
-
-    
-//THIS IS A STRETCH GOAL.
-//display winning message if all words are solved
-//also, display message if no words can be found at all, therefore, direct player to reset page
-function checkWordsLeft() {
-
-}
-
-//this is the fifth element to check. the hint area is hidden until the player clicks
+//this is the last element to check. the hint area is hidden until the player clicks
 //at that point, programatically, I want to check which dictionary word is the longest left over
 //then randomize which letter to hint
 //append that letter to the DOM with the other characters hidden by password bulletpoints
-function checkForHint() {
 
+
+
+function checkForHint(dictionary, randomLettersArray) {
+    var longestWord = dictionary.reduce(function(longest, currentWord) {
+        if(currentWord.length > longest.length) {
+            return console.log(currentWord)
+        } else {
+            return console.log(longest)
+        }
+    })
 }
+//     return dictionary.filter(function(el) {
+//          return true; 
+// //     })
+// // }
+// console.log(checkForHint(dictionary, randomLettersArray));
+    
+//     let request = new Request( {
+//         method: 'GET'
+//     });
+//     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${playerInputValue}?key=492df6b1-c190-4506-97f9-9fd3a76d3eea`)
+//     .then((response) => response.json())
+//     .then((data) => {
+//         const children = data[0].meta.id[0];
+//         console.log(children)
+//     })
+    
+//     .catch (function(err) {
+//         console.log('err')
+//     })
+
+// }
 
 
         
 
-
-
-
-
-
-
-//GAME FUNCTIONS
 
 
 
