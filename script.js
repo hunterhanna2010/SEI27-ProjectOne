@@ -74,6 +74,7 @@ resetButton.addEventListener('click', function(e) {
     var clearParaElementFive = document.getElementById('p-five').textContent = '';
     var clearPlayerInput = document.getElementById('player-input').textContent = '';
     var clearHintField = document.getElementById('hint-field').textContent = '';
+    var clearH1 = document.getElementById('message').textContent = 'Word Unscrambler';
     var clearHintStyle = document.getElementById('hint-field').style.visibility = 'hidden';
     playerScore = 0;
     currentScore.textContent = `Current Score: ${playerScore}`
@@ -86,6 +87,7 @@ resetButton.addEventListener('click', function(e) {
 hintButton.addEventListener('click', function(e) {
     console.log(`hint has been clicked`);
     playerScore = playerScore - 10;
+    checkWin();
     currentScore.textContent = `Current Score: ${playerScore}`;
     var hintField = document.getElementById('hint-field');
     hintField.style.visibility = 'visible';
@@ -112,7 +114,7 @@ function checkWin() {
     if (playerScore < 0) {
     console.log(`WE LOSE`)
     document.getElementById('message').textContent = 'You lost'
-    } else if (playerScore >= 5) {
+    } else if (playerScore >= 10) {
     console.log('WE HAVE A winner')
     document.getElementById('message').textContent = 'You Win';
     // // }
@@ -213,36 +215,30 @@ function checkMatch(playerInputValue) {
 
 
 
-function checkForHint(dictionary, randomLettersArray) {
-    var longestWord = dictionary.reduce(function(longest, currentWord) {
-        if(currentWord.length > longest.length) {
-            return console.log(currentWord)
-        } else {
-            return console.log(longest)
-        }
-    })
-}
-//     return dictionary.filter(function(el) {
-//          return true; 
+// function checkForHint() {
+//     dictionary.filter(word => {
+//         randomLettersArray.map()
+//     }
+// //          return true; 
+// // //     })
+// // // }
+// // console.log(checkForHint(dictionary, randomLettersArray));
+    
+// //     let request = new Request( {
+// //         method: 'GET'
+// //     });
+// //     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${playerInputValue}?key=492df6b1-c190-4506-97f9-9fd3a76d3eea`)
+// //     .then((response) => response.json())
+// //     .then((data) => {
+// //         const children = data[0].meta.id[0];
+// //         console.log(children)
 // //     })
-// // }
-// console.log(checkForHint(dictionary, randomLettersArray));
     
-//     let request = new Request( {
-//         method: 'GET'
-//     });
-//     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${playerInputValue}?key=492df6b1-c190-4506-97f9-9fd3a76d3eea`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//         const children = data[0].meta.id[0];
-//         console.log(children)
-//     })
-    
-//     .catch (function(err) {
-//         console.log('err')
-//     })
+// //     .catch (function(err) {
+// //         console.log('err')
+// //     })
 
-// }
+// // }
 
 
         
